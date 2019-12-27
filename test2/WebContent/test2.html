@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<form>
+	고객정보를 입력하세요<br> 이름 : <input type="text" name="name"> <br>
+	성별 : <input type="radio" name="gen"  checked="checked" value="M" > 남자
+		<input type="radio" name="gen" value="F" > 여자 <br>
+	이메일 : <input	type="text" name="email"> <br> 
+	태어난 연도 : <input type="text" name="year"> <br>
+	<input type="button" value="입력" onclick="run()">
+
+</form>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+	function run() {
+		var name = document.querySelector("[name=name]").value;
+		var elem = $('input:checked');
+		var email = document.querySelector("[name=email]").value;
+		var year = document.querySelector("[name=year]").value;
+		alert(name + $(elem).val() + email + year)
+	}
+</script>

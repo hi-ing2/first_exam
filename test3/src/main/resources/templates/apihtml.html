@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+	<table border="1">
+		<tr>
+			<td>title</td>
+			<td>description</td>
+			<td>thumbnails-url</td>
+			<td>width</td>
+			<td>height</td>
+			<td>channelTitle</td>
+		</tr>
+		<tr th:each="user : ${map.items}">
+			<td th:text="${user.snippet.title}"></td>
+			<td th:text="${user.snippet.description}"></td>
+			<td><img th:src="${user.snippet.thumbnails.default.url}"></td>
+			<td th:text="${user.snippet.thumbnails.default.width}"></td>
+			<td th:text="${user.snippet.thumbnails.default.height}"></td>
+			<td th:text="${user.snippet.channelTitle}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
